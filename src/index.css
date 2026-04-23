@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #11131b;
+  --color-on-background: #e2e1ee;
+  --color-surface-container-high: #282933;
+  --color-surface-container: #1d1f28;
+  --color-on-surface-variant: #c2c6d7;
+  --color-primary: #b3c5ff;
+  --color-primary-container: #5e8bff;
+  --color-on-primary-container: #002567;
+  --color-tertiary: #ffb59b;
+  --color-tertiary-container: #f2642c;
+  
+  --font-display: "Public Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-on-background antialiased;
+}
+
+.mask-fade {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px rgba(94, 139, 255, 0.25);
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
